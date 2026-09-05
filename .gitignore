@@ -1,0 +1,35 @@
+# ---- 构建产物与运行数据（一律不进仓） ----
+/release/
+data/
+*.db
+*.db-wal
+*.db-shm
+runtime_secrets.json
+
+# ---- Python 缓存 ----
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ---- 打包/依赖目录 ----
+venv/
+.venv/
+build/
+dist/
+*.egg-info/
+
+# ---- 日志与临时 ----
+*.log
+*.zip
+*.tmp
+.DS_Store
+Thumbs.db
+
+# ---- 本地开发辅助（不进仓，仓库保留 = 产品代码 + 构建脚本） ----
+scripts/about_v2_smoke.py
+
+# ---- 本地环境（示例文件除外） ----
+.env
+.env.*
+!.env.example

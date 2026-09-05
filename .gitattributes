@@ -1,0 +1,18 @@
+# ============================================================================
+# KidTime-Preview · .gitattributes
+# 配套设置：git config core.autocrlf false
+# 策略：仓库内统一存 LF（本仓无 .bat/.cmd/.ps1，无需 CRLF 特例）。
+# ============================================================================
+
+# 默认：自动识别文本，仓库内规范为 LF
+* text=auto eol=lf
+
+# 文本文件显式 LF（含 BOM 的 UTF-8 中文文档不受影响）
+*.py   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.sql  text eol=lf
+*.spec text eol=lf
+*.ini  text eol=lf
+*.mako text eol=lf
+LICENSE text eol=lf

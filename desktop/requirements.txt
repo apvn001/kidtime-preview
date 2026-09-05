@@ -1,0 +1,12 @@
+# KidTime 便携单机版（client-preview）Windows 客户端运行时依赖
+# 单机形态：内嵌后端走 http://127.0.0.1 明文，客户端不校验 TLS。
+PySide6>=6.6,<7
+httpx>=0.27,<1
+# certifi 是 httpx 的传递依赖，显式声明锁定版本基线（内嵌后端的 uvicorn/fastapi
+# 及其 httpx 调用可能命中，保持稳定即可；客户端自身不做 https 出站）。
+certifi>=2024.7.4
+tzdata>=2024.1
+pywin32>=306; sys_platform == "win32"
+
+# ---- 构建工具（仅打包机需要；不从源码运行时用） ----
+pyinstaller>=6.0

@@ -8,7 +8,7 @@ KidTime-Preview 是一个单机运行的 Windows 上机时间管控桌面客户�
 ## 目录组成
 
 ```
-client-preview/
+kidtime-preview/
 ├── desktop/
 │   ├── kidtime_client/               # 桌面客户端包
 │   │   ├── app.py                    #   主控制器
@@ -36,7 +36,6 @@ client-preview/
 
 - Windows 10 1809+（x64）
 - Python 3.10 或更高版本（PySide6 6.6+、SQLAlchemy 2.0、Pydantic 2.9+ 等依赖需要较新的 Python）
-- PyInstaller（构建打包用，已列入 `desktop/requirements.txt`）
 
 ### 安装依赖
 
@@ -50,8 +49,7 @@ pip install -r backend/requirements.txt   # 内嵌后端依赖
 前置：Windows + 已装上述依赖的 venv。
 
 ```bash
-# 1) 生成预建模板库（含全部表 + 内置规则模板；不预置任何账号，
-#    admin 由程序首启时自动创建）
+# 1) 生成预建模板库（含全部表 + 内置规则模板）
 #    产物：release/preview/kidtime_template.db
 cd backend
 python ../scripts/build_template_db.py
@@ -63,7 +61,6 @@ python ../scripts/build_preview.py
 ```
 
 产物：`release/KidTimePreview-1.0.0-win64.zip`（解压即用，无需安装）。
-`release/` 目录不入库——正式发布的二进制经 GitHub Releases 分发。
 
 ## 验证
 
@@ -71,17 +68,15 @@ python ../scripts/build_preview.py
 
 ## 版本约定
 
-产品版本号唯一权威来源 = `desktop/kidtime_client/constants.py` 的
-`CLIENT_VERSION`（当前 `1.0.0`）。改版只动这一处。
+产品版本号唯一权威来源 = `desktop/kidtime_client/constants.py` 的 `CLIENT_VERSION`（当前 `1.0.0`）。
+改版只动这一处。
 
 ## 协议
 
-本项目以 **GPL-3.0-or-later** 发布。任何人可自由使用、学习、修改和再分发
-本项目代码，但二次分发（包括基于本项目打包后的可执行文件）必须遵守同一
+本项目以 **GPL-3.0-or-later** 发布。任何人可自由使用、学习、修改和再分发本项目代码，但二次分发（包括基于本项目打包后的可执行文件）必须遵守同一
 协议，并提供对应的完整源码。
 
-完整协议文本见仓库根目录的 [`LICENSE`](LICENSE) 文件
-（GNU General Public License v3.0 官方全文）。
+完整协议文本见仓库根目录的 [`LICENSE`](LICENSE) 文件（GNU General Public License v3.0 官方全文）。
 
 ## 免责与安全声明
 
@@ -93,8 +88,7 @@ python ../scripts/build_preview.py
 
 ## 致谢 / 第三方组件
 
-本项目依赖以下开源组件（以 `desktop/requirements.txt` 与
-`backend/requirements.txt` 实际声明为准）：
+本项目依赖以下开源组件（以 `desktop/requirements.txt` 与 `backend/requirements.txt` 实际声明为准）：
 
 | 组件                                                                                   | 用途          | 许可证                                                  |
 | ------------------------------------------------------------------------------------ | ----------- | ---------------------------------------------------- |
